@@ -495,7 +495,7 @@
 </div>
         
         <div class="post-preview">
-    <div class="post-img" style="background-image: url('/picture/IT.jpg')"></div>
+    <div class="post-img" style="background-image: url('/picture/new.jpg')"></div>
     <div class="post-info">
         <div class="post-info-center">
             <div class="hidden-xs">
@@ -509,14 +509,14 @@
                 
                 
             </div>
-            <a href="/2020/10/24/写在最初-二/" class="title">
-                写在最初(二)
+            <a href="/2020/10/24/写在最初/" class="title">
+                写在最初
             </a>
             <p class="text-gray">
                 <small>
                     <span>发表于2020-10-24，</span>
-                    <span class="hidden-xs">全文1567字，</span>
-                    <span>阅读约6分钟</span>
+                    <span class="hidden-xs">全文2165字，</span>
+                    <span>阅读约8分钟</span>
                 </small>
             </p>
         </div>
@@ -567,8 +567,6 @@
 <link rel="stylesheet" href="/css/gitalk.css">
 
 
-<script src="/js/md5.min.js"></script>
-   #
 <script src="/js/gitalk.min.js"></script>
 
 <script>
@@ -582,11 +580,11 @@
             clientID: 'd85cc90f4bef6f4c68bf',
             clientSecret: 'b98b26757224073344a7afb686d19fe273b30354',
             accessToken: 'xxxx',
-            repo: 'xiaoyingcoding',
+            repo: 'xiaoyingcoding.github.io',
             owner: 'xiaoyingcoding',
             admin: ['xiaoyingcoding'],
-            id: md5(location.pathname),  #decodeURI(window.location.pathname) 
-            distractionFreeMode: true
+            id: window.location.pathname,
+            distractionFreeMode: false
         });
         fetch("https://api.github.com/user").then(function(resp){
             gitalk.render('gitalk-container');
