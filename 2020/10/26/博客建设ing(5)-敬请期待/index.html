@@ -579,7 +579,7 @@
             repo: 'xiaoyingcoding.github.io',
             owner: 'xiaoyingcoding',
             admin: ['xiaoyingcoding'],
-            id: window.location.pathname,
+            id: decodeURI(window.location.pathname),
             distractionFreeMode: false
         });
         fetch("https://api.github.com/user").then(function(resp){
