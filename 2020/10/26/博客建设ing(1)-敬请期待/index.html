@@ -480,13 +480,13 @@
                 
                 
             </div>
-            <a href="/2020/10/26/博客建设ing(1)-敬请期待/" class="title">
-                博客建设ing(1),敬请期待
+            <a href="/2020/10/26/博客建设ing(2)-敬请期待/" class="title">
+                博客建设ing(2),敬请期待
             </a>
             <p class="text-gray">
                 <small>
                     <span>发表于2020-10-26，</span>
-                    <span class="hidden-xs">全文690字，</span>
+                    <span class="hidden-xs">全文682字，</span>
                     <span>阅读约3分钟</span>
                 </small>
             </p>
@@ -495,7 +495,7 @@
 </div>
         
         <div class="post-preview">
-    <div class="post-img" style="background-image: url('/picture/IT.jpg')"></div>
+    <div class="post-img" style="background-image: url('/picture/建设中.jpg')"></div>
     <div class="post-info">
         <div class="post-info-center">
             <div class="hidden-xs">
@@ -509,14 +509,14 @@
                 
                 
             </div>
-            <a href="/2020/10/24/写在最初-二/" class="title">
-                写在最初(二)
+            <a href="/2020/10/26/博客建设ing(1)-敬请期待/" class="title">
+                博客建设ing(1),敬请期待
             </a>
             <p class="text-gray">
                 <small>
-                    <span>发表于2020-10-24，</span>
-                    <span class="hidden-xs">全文1567字，</span>
-                    <span>阅读约6分钟</span>
+                    <span>发表于2020-10-26，</span>
+                    <span class="hidden-xs">全文690字，</span>
+                    <span>阅读约3分钟</span>
                 </small>
             </p>
         </div>
@@ -567,6 +567,8 @@
 <link rel="stylesheet" href="/css/gitalk.css">
 
 
+<script src="/js/md5.min.js"></script>
+   #
 <script src="/js/gitalk.min.js"></script>
 
 <script>
@@ -583,8 +585,8 @@
             repo: 'xiaoyingcoding',
             owner: 'xiaoyingcoding',
             admin: ['xiaoyingcoding'],
-            id: window.location.pathname     #window.location.pathname,
-            distractionFreeMode: true#false
+            id: md5(location.pathname),  #decodeURI(window.location.pathname) 
+            distractionFreeMode: true
         });
         fetch("https://api.github.com/user").then(function(resp){
             gitalk.render('gitalk-container');
@@ -603,7 +605,6 @@
                 '<p class="dis-item-des">${comment.count} 评论 ● ${comment.date}</p>' +
                 '<div class="dis-item-content"><img class="dis-item-img" src="${comment.icon}" alt="icon"><p><b><span class="dis-item-user">${comment.user}</span></b>&nbsp;——&nbsp;${comment.body}</p></div>' +
                 '</a>'
-
             var wrapper = getDom('#gitalk-related');
             comments = shuffle(comments);
             comments.slice(0, 4).forEach(function (c) {

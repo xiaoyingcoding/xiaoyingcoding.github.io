@@ -567,6 +567,8 @@
 <link rel="stylesheet" href="/css/gitalk.css">
 
 
+<script src="/js/md5.min.js"></script>
+   #
 <script src="/js/gitalk.min.js"></script>
 
 <script>
@@ -583,8 +585,8 @@
             repo: 'xiaoyingcoding',
             owner: 'xiaoyingcoding',
             admin: ['xiaoyingcoding'],
-            id: window.location.pathname     #window.location.pathname,
-            distractionFreeMode: true#false
+            id: md5(location.pathname),  #decodeURI(window.location.pathname) 
+            distractionFreeMode: true
         });
         fetch("https://api.github.com/user").then(function(resp){
             gitalk.render('gitalk-container');
@@ -603,7 +605,6 @@
                 '<p class="dis-item-des">${comment.count} 评论 ● ${comment.date}</p>' +
                 '<div class="dis-item-content"><img class="dis-item-img" src="${comment.icon}" alt="icon"><p><b><span class="dis-item-user">${comment.user}</span></b>&nbsp;——&nbsp;${comment.body}</p></div>' +
                 '</a>'
-
             var wrapper = getDom('#gitalk-related');
             comments = shuffle(comments);
             comments.slice(0, 4).forEach(function (c) {
